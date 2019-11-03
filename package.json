@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-crash-course",
+  "version": "1.0.0",
+  "description": "Nodejs Guide",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madhukesh048/Nodejs-Crash-Course.git"
+  },
+  "author": "Madhukesh D",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madhukesh048/Nodejs-Crash-Course/issues"
+  },
+  "homepage": "https://github.com/madhukesh048/Nodejs-Crash-Course#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "generate-gitignore": "^0.2.6"
+  }
+}
