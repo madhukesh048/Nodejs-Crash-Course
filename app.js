@@ -1,9 +1,24 @@
-//Setting up nodejs server
-const http = require('http');
+//With Expressjs
+const path = require('path');
 
-const routes = require('./routes');
+const express = require('express');
 
-console.log(routes.someText);
-const server = http.createServer(routes.handler);
+const bodyparser = require('body-parser');
 
-server.listen(3000);
+const app = express();
+
+const adminRoutes = require('./routes/admin');
+
+const shopRoutes = require('./routes/shop');
+
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname,'public')));
+
+app.use('/admin',adminRoutes);
+app.use(shopRoutes);
+
+app.use((req, res, next) => {
+    res.status(404).sendFile(path.join(__dirname,'views','page-not-found.html'));
+});
+
+app.listen(3000);
